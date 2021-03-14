@@ -1,39 +1,47 @@
-# Business Understanding
-You work for a consumer finance company which specialises in lending various types of loans to urban customers. When the company receives a loan application, the company has to make a decision for loan approval based on the applicant’s profile. Two types of risks are associated with the bank’s decision:
-
-If the applicant is likely to repay the loan, then not approving the loan results in a loss of business to the company
-
-If the applicant is not likely to repay the loan, i.e. he/she is likely to default, then approving the loan may lead to a financial loss for the company
- 
-In this case study, you will use EDA to understand how consumer attributes and loan attributes influence the tendency of default.
-
-Figure 1. Loan Data Set
-Figure 1. Loan Data Set
-When a person applies for a loan, there are two types of decisions that could be taken by the company:
-
-Loan accepted: If the company approves the loan, there are 3 possible scenarios described below:
-
-Fully paid: Applicant has fully paid the loan (the principal and the interest rate)
-
-Current: Applicant is in the process of paying the instalments, i.e. the tenure of the loan is not yet completed. These candidates are not labelled as 'defaulted'.
-
-Charged-off: Applicant has not paid the instalments in due time for a long period of time, i.e. he/she has defaulted on the loan 
-
-Loan rejected: The company had rejected the loan (because the candidate does not meet their requirements etc.). Since the loan was rejected, there is no transactional history of those applicants with the company and so this data is not available with the company (and thus in this dataset)
- 
-
-# Business Objectives
-This company is the largest online loan marketplace, facilitating personal loans, business loans, and financing of medical procedures. Borrowers can easily access lower interest rate loans through a fast online interface. 
+# Project Brief
+You work for Spark Funds, an asset management company. Spark Funds wants to make investments in a few companies. The CEO of Spark Funds wants to understand the global trends in investments so that she can take the investment decisions effectively.
 
  
 
-Like most other lending companies, lending loans to ‘risky’ applicants is the largest source of financial loss (called credit loss). The credit loss is the amount of money lost by the lender when the borrower refuses to pay or runs away with the money owed. In other words, borrowers who default cause the largest amount of loss to the lenders. In this case, the customers labelled as 'charged-off' are the 'defaulters'. 
+# Business and Data Understanding
+## Spark Funds has two minor constraints for investments:
+
+It wants to invest between 5 to 15 million USD per round of investment
+
+It wants to invest only in English-speaking countries because of the ease of communication with the companies it would invest in
+
+For your analysis, consider a country to be English speaking only if English is one of the official languages in that country
+
+You may use this list: Click here for a list of countries where English is an official language.
 
  
 
-If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.
+These conditions will give you sufficient information for your initial analysis. Before getting to specific questions, let’s understand the problem and the data first.
 
  
 
-In other words, the company wants to understand the driving factors (or driver variables) behind loan default, i.e. the variables which are strong indicators of default.  The company can utilise this knowledge for its portfolio and risk assessment. 
+## 1. What is the strategy?
 
+Spark Funds wants to invest where most other investors are investing. This pattern is often observed among early-stage startup investors.
+
+ 
+
+## 2. Where did we get the data from? 
+
+We have taken real investment data from crunchbase.com, so the insights you get may be incredibly useful. For this assignment, we have divided the data into the following files:
+
+ 
+
+You have to use three main data tables for the entire analysis (available for download on the next page):
+
+ 
+
+## 3. What is Spark Funds’ business objective?
+
+The business objectives and goals of data analysis are pretty straightforward.
+
+Business objective: The objective is to identify the best sectors, countries, and a suitable investment type for making investments. The overall strategy is to invest where others are investing, implying that the 'best' sectors and countries are the ones 'where most investors are investing'.
+Goals of data analysis: Your goals are divided into three sub-goals:
+Investment type analysis: Comparing the typical investment amounts in the venture, seed, angel, private equity etc. so that Spark Funds can choose the type that is best suited for their strategy.
+Country analysis: Identifying the countries which have been the most heavily invested in the past. These will be Spark Funds’ favourites as well.
+Sector analysis: Understanding the distribution of investments across the eight main sectors. (Note that we are interested in the eight 'main sectors' provided in the mapping file. The two files — companies and rounds2 — have numerous sub-sector names; hence, you will need to map each sub-sector to its main sector.)
